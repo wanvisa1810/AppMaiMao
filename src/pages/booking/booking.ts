@@ -25,4 +25,5 @@ export class BookingPage {
   gotoTable(){
     this.navCtrl.push(AddbookingPage);
   }
+
 }
