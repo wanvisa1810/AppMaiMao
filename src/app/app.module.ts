@@ -7,9 +7,17 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import { MenuPage } from '../pages/menu/menu';
+import { BookingPage } from '../pages/booking/booking';
+import { StatusPage } from '../pages/status/status';
+import { SettingPage } from '../pages/setting/setting';
+import { AddbookingPage } from '../pages/addbooking/addbooking';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { BookingProvider } from '../providers/booking/booking';
+
+
 
 @NgModule({
   declarations: [
@@ -17,7 +25,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    MenuPage,
+    BookingPage,
+    StatusPage,
+    SettingPage,
+    AddbookingPage 
   ],
   imports: [
     BrowserModule,
@@ -29,12 +42,18 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    MenuPage,
+    BookingPage,
+    StatusPage,
+    SettingPage,
+    AddbookingPage 
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    BookingProvider
   ]
 })
 export class AppModule {}

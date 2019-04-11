@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>ข้อมูลการจอง</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <h2>เพิ่มข้อมูล</h2>
+  <form (ngSubmit)="saveData()">
+    <ion-item>
+      <ion-label floating> จำนวนคน</ion-label>
+      <ion-input type="number " placehotder="จำนวนคน" [(ngModel)]="data.people" name="people" requried></ion-input>>
+    </ion-item>
+    <ion-item>
+          <ion-label floating>วันที่</ion-label>
+          <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="data.date" name="date" required=""></ion-datetime>
+    </ion-item>
+    <ion-item>
+    <ion-label floating>ชื่อผู้จอง</ion-label>
+        <ion-input type="text"  placehotder="ชื่อผู้จอง" [(ngModel)]="data.description" name="description" requried>
+        </ion-input>
+    </ion-item>
+    <button ion-button type="submit" block>บันทึกข้อมูล</button>
+  </form>
+  </ion-content>
+  

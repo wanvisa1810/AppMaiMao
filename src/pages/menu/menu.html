@@ -1,0 +1,38 @@
+<!--
+  Generated template for the MenuPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Menu
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+        <div class="showmenu">
+          <!--<img src="assets/imgs/stitch1.png"> -->
+          <h3>เลือกเมนูที่ต้องการ</h3>
+        </div>
+        <ion-list>
+        <ion-item (click)=gotoBooking()>
+          <ion-icon name="clipboard"></ion-icon>  จองโต๊ะ
+        </ion-item>
+  
+        <ion-item (click)=gotoStatus()>
+          <ion-icon name="checkbox-outline"></ion-icon>  เช็คสถานะ
+        </ion-item>
+      
+        <ion-item (click)=gotoSetting()>
+            <ion-icon name="settings"></ion-icon>  ตั้งค่าส่วนตัว
+        </ion-item>
+        
+        <ion-item (click)=gotoContact()>
+            <ion-icon name="contact"></ion-icon>  ติดต่อเรา
+          </ion-item>
+        </ion-list>
+</ion-content>

@@ -1,6 +1,8 @@
 {
   "name": "AppMaiMao",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular",
   "id": "b156413c"
 }
