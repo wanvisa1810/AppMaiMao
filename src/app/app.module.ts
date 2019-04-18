@@ -17,6 +17,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { BookingProvider } from '../providers/booking/booking';
 
+import { LoginPage } from '../pages/login/login';
+
+
 
 
 @NgModule({
@@ -30,7 +33,8 @@ import { BookingProvider } from '../providers/booking/booking';
     BookingPage,
     StatusPage,
     SettingPage,
-    AddbookingPage 
+    AddbookingPage,
+    LoginPage
   ],
   imports: [
     BrowserModule,
@@ -47,7 +51,8 @@ import { BookingProvider } from '../providers/booking/booking';
     BookingPage,
     StatusPage,
     SettingPage,
-    AddbookingPage 
+    AddbookingPage,
+    LoginPage
   ],
   providers: [
     StatusBar,
