@@ -13,14 +13,18 @@
  <h2>Welcome to MaiMao</h2>
  
 
-  <ion-list>
-    <ion-item (click)=gotoLogin()>
-        <button ion-button type="submit" block>Login</button>
-    </ion-item>>
+<ion-list>
       <ion-item>
-          <button ion-button type="submit" block>Singin</button>
+        <ion-icon name=""></ion-icon>  User : 
+      </ion-item>
+      <ion-item>
+        <ion-icon name=""></ion-icon>  Password : 
+      </ion-item>
+    <ion-item (click)="gotoMenu()">
+        <button ion-button type="submit" block>Login</button>
     </ion-item>
-    
-  </ion-list>
-
+    </ion-list>
+      <ion-item (click)="gotoSignin()">
+          <button ion-button type="submit" block>Sign in</button>
+    </ion-item>
 </ion-content>

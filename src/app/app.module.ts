@@ -18,6 +18,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { BookingProvider } from '../providers/booking/booking';
 
 import { LoginPage } from '../pages/login/login';
+import { SigninPage } from '../pages/signin/signin';
 
 
 
@@ -34,7 +35,8 @@ import { LoginPage } from '../pages/login/login';
     StatusPage,
     SettingPage,
     AddbookingPage,
-    LoginPage
+    LoginPage,
+    SigninPage
   ],
   imports: [
     BrowserModule,
@@ -52,7 +54,8 @@ import { LoginPage } from '../pages/login/login';
     StatusPage,
     SettingPage,
     AddbookingPage,
-    LoginPage
+    LoginPage,
+    SigninPage
   ],
   providers: [
     StatusBar,
