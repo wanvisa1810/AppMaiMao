@@ -4,7 +4,6 @@ import { BookingPage } from '../booking/booking';
 import { StatusPage } from '../status/status';
 import { SettingPage } from '../setting/setting';
 import { ContactPage } from '../contact/contact';
-import { SignupPage } from '../signup/signup';
 
 /**
  * Generated class for the MenuPage page.
