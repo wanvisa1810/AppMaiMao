@@ -14,9 +14,20 @@
   <h3>Sign up To Maimao</h3>
 <ion-list>
 
+<!--<ion-item>
+  <ion-label floating>Name : </ion-label>
+  <ion-input type="customerName"  [(ngModel)]="customer.customerName" name="customerName" requried>
+  </ion-input>
+</ion-item>-->
+
 <ion-item>
-  <ion-icon name=""></ion-icon>  Username : 
+  <ion-icon name=""></ion-icon>  Name : 
 </ion-item>
+
+<ion-item>
+  <ion-icon name=""></ion-icon>  NickName : 
+</ion-item>
+
 
 <ion-item>
   <ion-icon name=""></ion-icon>  Mail : 
@@ -28,7 +39,7 @@
 
 </ion-list>
 <ion-item (click)="gotoMenu()">
-  <button ion-button type="submit" block>OK</button>
+  <button ion-button type="submit" block>Sing up</button>
 </ion-item>
 </ion-content>
 
