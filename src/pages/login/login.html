@@ -11,14 +11,15 @@
 </ion-header>
 
 <ion-content padding>
-  <h3>เลือกเมนูที่ต้องการ</h3>
-  <ion-list>
+<form (ngSubmit)="saveLogin()">
   <ion-item>
-    <ion-icon name=""></ion-icon>  User : 
+    <ion-label floating> UserName</ion-label>
+    <ion-input type="text " placehotder="จำนวนคน" [(ngModel)]="mlogin.lusername" name="person" requried></ion-input>>
   </ion-item>
-  
   <ion-item>
-    <ion-icon name=""></ion-icon>  Password : 
+        <ion-label floating>Password</ion-label>
+        <ion-datetime type="text" [(ngModel)]="mlogin.lpassword" name="person" required></ion-datetime>
   </ion-item>
-  </ion-list>
+  <button ion-button type="submit" block color="success">บันทึกข้อมูล</button>
+</form>
 </ion-content>

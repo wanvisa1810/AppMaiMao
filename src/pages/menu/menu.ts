@@ -4,6 +4,7 @@ import { BookingPage } from '../booking/booking';
 import { StatusPage } from '../status/status';
 import { SettingPage } from '../setting/setting';
 import { ContactPage } from '../contact/contact';
+import { CustomerPage } from '../customer/customer';
 
 /**
  * Generated class for the MenuPage page.
@@ -36,5 +37,8 @@ export class MenuPage {
     }
     gotoContact(){
       this.navCtrl.push(ContactPage);
+    }
+    gotoCustomer(){
+      this.navCtrl.push(CustomerPage);
     }
 }

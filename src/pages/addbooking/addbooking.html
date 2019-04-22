@@ -5,21 +5,38 @@
   </ion-header>
   
   <ion-content padding>
-    <h2>เพิ่มข้อมูล</h2>
-  <form (ngSubmit)="saveData()">
+    <h2>กรุณากรอกข้อมูล</h2>
+  <form (ngSubmit)="addBooking()">
+
+      <ion-item>
+          <ion-label>โต๊ะ</ion-label>
+          <ion-select placeholder="Select One">
+            <ion-select value="m1">MaiMao 1</ion-select>
+            <ion-select value="m2">MaiMao 2</ion-select>
+          </ion-select>
+        </ion-item>
+
+      <ion-item>
+          <ion-label floating> Code</ion-label>
+          <ion-input type="number " placehotder="รหัสโต๊ะ" [(ngModel)]="addbooking.bkId" name="number" requried></ion-input>>
+        </ion-item>
     <ion-item>
       <ion-label floating> จำนวนคน</ion-label>
-      <ion-input type="number " placehotder="จำนวนคน" [(ngModel)]="data.person" name="person" requried></ion-input>>
+      <ion-input type="number " placehotder="จำนวนคน" [(ngModel)]="addbooking.bkPerson" name="person" requried></ion-input>>
     </ion-item>
     <ion-item>
           <ion-label floating>วันที่</ion-label>
-          <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="data.date" name="date" required=""></ion-datetime>
+          <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="addbooking.bkDate" name="date" required=""></ion-datetime>
     </ion-item>
     <ion-item>
+        <ion-label floating>เวลา</ion-label>
+        <ion-datetime displayFormat="HH:mm" [(ngModel)]="addbooking.bkTime" name="time" required=""></ion-datetime>
+  </ion-item>
+    <ion-item>
     <ion-label floating>ชื่อผู้จอง</ion-label>
-        <ion-input type="text"  placehotder="ชื่อผู้จอง" [(ngModel)]="data.description" name="description" requried></ion-input>
+        <ion-input type="text"  placehotder="ชื่อผู้จอง" [(ngModel)]="addbooking.bkName" name="description" requried></ion-input>
     </ion-item>
-    <button ion-button type="submit" block>บันทึกข้อมูล</button>
+    <button ion-button type="submit" block color="success">บันทึกข้อมูล</button>
   </form>
   </ion-content>
   

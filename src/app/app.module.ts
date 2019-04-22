@@ -13,15 +13,18 @@ import { StatusPage } from '../pages/status/status';
 import { SettingPage } from '../pages/setting/setting';
 import { AddbookingPage } from '../pages/addbooking/addbooking';
 
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { BookingProvider } from '../providers/booking/booking';
+//import { BookingProvider } from '../providers/booking/booking';
+import { HttpModule } from '@angular/http';
+//import { HTTP } from '@ionic-native/http';
+import { HttpClientModule} from '@angular/common/http';
 
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
-
-
-
+import { CustomerPage } from '../pages/customer/customer';
+import { EditcustomerPage } from '../pages/editcustomer/editcustomer';
 
 @NgModule({
   declarations: [
@@ -36,11 +39,16 @@ import { SignupPage } from '../pages/signup/signup';
     SettingPage,
     AddbookingPage,
     LoginPage,
-    SignupPage
+    SignupPage,
+    CustomerPage,
+    EditcustomerPage 
+    
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpModule,
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -55,13 +63,17 @@ import { SignupPage } from '../pages/signup/signup';
     SettingPage,
     AddbookingPage,
     LoginPage,
-    SignupPage
+    SignupPage,
+    CustomerPage,
+    EditcustomerPage 
+    
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    BookingProvider
+    //HTTP
+  
   ]
 })
 export class AppModule {}
