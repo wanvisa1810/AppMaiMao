@@ -4,7 +4,6 @@ import{ Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { EditaddbookingPage } from '../editaddbooking/editaddbooking';
 
-
 /**
  * Generated class for the StatusPage page.
  *
@@ -34,7 +33,7 @@ export class StatusPage {
   ionViewWillEnter(){
     this.getData();
   }
-  
+
   editaddbooking(id)
   {
     this.navCtrl.push(EditaddbookingPage,{addbooking :id});

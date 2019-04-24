@@ -23,18 +23,18 @@
       </ion-item>
 
       <ion-item>
-          <ion-label floating>วันที่</ion-label>
+          <ion-label floating>วันที่เข้าร้าน</ion-label>
           <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="addbooking.bkDate" name="date" required=""></ion-datetime>
       </ion-item>
       <ion-item>
-          <ion-label floating>เวลา</ion-label>
+          <ion-label floating>เวลาที่เข้าร้าน</ion-label>
           <ion-datetime displayFormat="HH:mm" [(ngModel)]="addbooking.bkTime" name="time" required=""></ion-datetime>
       </ion-item>
       <ion-item>
           <ion-label floating>ชื่อผู้จอง</ion-label>
           <ion-input type="text"  placehotder="ชื่อผู้จอง" [(ngModel)]="addbooking.bkName" name="description" requried></ion-input>
       </ion-item>
-          <button ion-button block>SAVE</button>
+          <button ion-button block>บันทึกข้อมูล</button>
       </ion-list>
   </form>
 </ion-content>

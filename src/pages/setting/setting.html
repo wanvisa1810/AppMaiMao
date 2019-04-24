@@ -11,30 +11,21 @@
 </ion-header>
 
 <ion-content padding>
-  <form (ngSubmit)="editcustomer()">
+    <h4>แก้ไขข้อมูลของลูกค้า</h4>
     <ion-list>
-        <ion-item>
-            <ion-label floating>รหัสลูกค้า</ion-label>
-            <ion-input type="text" name="customerID" [(ngModel)]="customer.customerID"></ion-input>
+        <ion-item *ngFor="let p of customer">
+          <h2>{{p.customerName}}</h2>
+          <p>{{p.customerMail}}</p>
+            <button ion-button clear item-end (click)="showDetails(p.customerID)">
+                <ion-icon name="eye"></ion-icon>
+            </button>
+            <button ion-button clear item-end (click)="deletecustomer(p.customerID)">
+                <ion-icon name="trash"></ion-icon>
+            </button>
+            <button ion-button clear item-end (click)="editcustomer(p.customerID)">
+                <ion-icon name="create"></ion-icon>
+            </button>
           </ion-item>
-
-      <ion-item>
-        <ion-label floating>ชื่อลูกค้า</ion-label>
-        <ion-input type="text" name="customerName" [(ngModel)]="customer.customerName"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label floating>เบอร์โทร</ion-label>
-        <ion-input type="text" name="customerTel" [(ngModel)]="customer.customerTel"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label floating>E-Mail</ion-label>
-        <ion-input type="text" name="customerMail" [(ngModel)]="customer.customerMail"></ion-input>
-      </ion-item>
-        <button ion-button block>บันทึกข้อมูล</button>
-    </ion-list>
-  </form>
-
+         </ion-list>
+      </ion-content>
   
-</ion-content>

@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { BookingPage } from '../booking/booking';
-//import { SettingPage } from '../setting/setting';
 import { ContactPage } from '../contact/contact';
-import { CustomerPage } from '../customer/customer';
-//import { DetailaddbookingPage } from '../detailaddbooking/detailaddbooking';
 import { StatusPage } from '../status/status';
+import { SettingcustomerPage } from '../settingcustomer/settingcustomer';
 
 /**
  * Generated class for the MenuPage page.
@@ -33,11 +31,12 @@ export class MenuPage {
     gotoStatus(){
       this.navCtrl.push(StatusPage);
     }
-    gotoCustomer(){
-      this.navCtrl.push(CustomerPage);
+    gotoSettingcustomer(){
+      this.navCtrl.push(SettingcustomerPage);
     }
     gotoContact(){
       this.navCtrl.push(ContactPage);
     }
+    
     
 }

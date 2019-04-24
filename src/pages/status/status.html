@@ -15,8 +15,8 @@
     <ion-item *ngFor="let m of addbooking">
         <p>หมายเลขโต๊ะ : {{m.bkId}}</p> 
         <p>จำนวนคน : {{m.bkPerson}}</p>
-        <p>วันที่ต้องการ : {{m.bkDate}}</p>
-        <p>เวลาที่ต้องการ : {{m.bkTime}}</p>
+        <p>วันที่เข้าร้าน : {{m.bkDate}}</p>
+        <p>เวลาที่เข้าร้าน : {{m.bkTime}}</p>
         <p>ชื่อผู้จอง : {{m.bkName}}</p> 
         <button ion-button clear item-end (click)="deleteaddbooking(m.bkId)">
             <ion-icon name="trash"></ion-icon>

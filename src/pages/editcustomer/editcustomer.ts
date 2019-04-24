@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http } from '@angular/http';
 import { HttpClient } from '@angular/common/http';
 import { AlertController } from 'ionic-angular';
-import { CustomerPage } from '../customer/customer';
+import { SettingcustomerPage } from '../settingcustomer/settingcustomer';
 
 /**
  * Generated class for the EditcustomerPage page.
@@ -50,7 +50,7 @@ editcustomer(){
             this.data = res;
             if(this.data.msg==true){
               this.showAlert("เรียบร้อย","แก้ไขข้อมูลของคุณแล้ว");
-              this.navCtrl.push(CustomerPage);
+              this.navCtrl.push(SettingcustomerPage);
               //this.navCtrl.popToRoot();
             }
         }

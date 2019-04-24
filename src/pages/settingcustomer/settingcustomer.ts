@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
-//import { SettingPage } from '../setting/setting';
-import { DetailsPage } from '../details/details';
+
 import { EditcustomerPage} from '../editcustomer/editcustomer';
 
 import {Http} from '@angular/http';
 import 'rxjs/add/operator/map';
-//import { SignupPage } from '../signup/signup';
+
 /**
- * Generated class for the CustomerPage page.
+ * Generated class for the SettingcustomerPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -16,20 +15,20 @@ import 'rxjs/add/operator/map';
 
 @IonicPage()
 @Component({
-  selector: 'page-customer',
-  templateUrl: 'customer.html'
+  selector: 'page-settingcustomer',
+  templateUrl: 'settingcustomer.html',
 })
-export class CustomerPage {
+export class SettingcustomerPage {
   customer:any=0;
   data:any=0;
   constructor(public navCtrl: NavController,public navParam: NavParams, public http: Http,private alertCtrl:AlertController) {
     this.getData();
   }
-  showDetails(id)
-  {
-    this.navCtrl.push(DetailsPage,{customerID:id});
-  }
-  editcustomer(id)
+  //showDetails(id)
+  //{
+  //  this.navCtrl.push(DetailsPage,{customerID:id});
+ // }
+ editcustomer(id)
   {
     this.navCtrl.push(EditcustomerPage,{customerID:id});
   }
@@ -45,11 +44,11 @@ export class CustomerPage {
     this.getData();
   }
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CustomerPage');
+    console.log('ionViewDidLoad SettingcustomerPage');
   }
   deletecustomer(customerID){
     this.alertCtrl.create({
-      title:"ยืนยัน", subTitle:"ยืนยันการลบของคุณ",buttons:[
+      title:"ยืนยัน", subTitle:"ยืนยันการลบข้อมูลของคุณ",buttons:[
         { 
           text: "Yes",
           handler:()=>{
@@ -80,5 +79,4 @@ export class CustomerPage {
     //show alert
     alert.present();
 }
-
 }
