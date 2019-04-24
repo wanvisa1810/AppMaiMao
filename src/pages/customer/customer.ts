@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
-import { SettingPage } from '../setting/setting';
+//import { SettingPage } from '../setting/setting';
+import { DetailsPage } from '../details/details';
+import { EditcustomerPage} from '../editcustomer/editcustomer';
 
 import {Http} from '@angular/http';
 import 'rxjs/add/operator/map';
-
+//import { SignupPage } from '../signup/signup';
 /**
  * Generated class for the CustomerPage page.
  *
@@ -23,12 +25,15 @@ export class CustomerPage {
   constructor(public navCtrl: NavController,public navParam: NavParams, public http: Http,private alertCtrl:AlertController) {
     this.getData();
   }
-  showSetting(id)
+  showDetails(id)
   {
-    this.navCtrl.push(SettingPage,{customerID :id});
+    this.navCtrl.push(DetailsPage,{customerID:id});
+  }
+  editcustomer(id)
+  {
+    this.navCtrl.push(EditcustomerPage,{customerID:id});
   }
   
-    
   //แสดงข้อมูลเมื่อเปิดมาสู่หน้าครั้งแรก
   getData(){
     this.http.get('http://localhost:8080/customer')
@@ -36,16 +41,15 @@ export class CustomerPage {
   }
   //แสดงข้อมูลเมื่อไปหน้าอื่นแล้วกลับมาสู่หน้า Home
 
-  //ionViewWillEnter(){
-    //this.getData();
-  ///}
+  ionViewWillEnter(){
+    this.getData();
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad CustomerPage');
   }
-
-  deleteData(customerID){
+  deletecustomer(customerID){
     this.alertCtrl.create({
-      title:"Confirm", subTitle:"Confirm delete",buttons:[
+      title:"ยืนยัน", subTitle:"ข้อมูลของคุณจะถูกลบ",buttons:[
         { 
           text: "Yes",
           handler:()=>{
@@ -54,7 +58,7 @@ export class CustomerPage {
               .subscribe(res=>{
                 this.data=res;
                 console.log(this.data);
-                  this.showAlert("Success", "Data deleted");
+                  this.showAlert("สำเร็จ", "ข้อมูลของคุณถูกลบ");
                   this.getData();
               }); 
           }

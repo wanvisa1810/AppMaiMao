@@ -3,10 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http } from '@angular/http';
 import { HttpClient } from '@angular/common/http';
 import { AlertController } from 'ionic-angular';
-import { StatusPage } from '../status/status';
-
 /**
- * Generated class for the EditcustomerPage page.
+ * Generated class for the EditaddbookingPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -14,26 +12,27 @@ import { StatusPage } from '../status/status';
 
 @IonicPage()
 @Component({
-  selector: 'page-editcustomer',
-  templateUrl: 'editcustomer.html',
+  selector: 'page-editaddbooking',
+  templateUrl: 'editaddbooking.html',
 })
-export class EditcustomerPage {
-  customer = {
-    customerID:"",
-    customerName:"",
-    customerTel:"",
-    customerMail:""
-  };
-  data:any=0;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http,
+export class EditaddbookingPage {
+  addbooking = {
+    bkId:"",
+    bkPerson:"",
+    bkDate:"",
+    bktTime:"",
+    bkName:""
+  }
+  data:any;
+  constructor(public navCtrl: NavController, public navParams: NavParams , public http: Http,
     private alertCtrl: AlertController,private httpclient: HttpClient) {
-    let  customerID=this.navParams.get('customerID');
-    let url = "http://localhost:8080/customer/" +customerID;
+      let bkId=this.navParams.get('bkId');
+    let url = "http://localhost:8080/addbooking/" + bkId;
     console.log(url);
     this.http.get(url)
     .map(res=>res.json())
     .subscribe(data => {
-      this.customer = data;
+      this.addbooking = data;
     });
   }
   ionViewDidLoad() {
@@ -41,17 +40,16 @@ export class EditcustomerPage {
 
   }
 editcustomer(){
-  let customerID=this.navParams.get('customerID');
-  let url = "http://localhost:8080/customer/" + customerID;
-    console.log(this.customer);
-    this.httpclient.post(url, this.customer)
+  let bkId=this.navParams.get('customerID');
+  let url = "http://localhost:8080/customer/" + bkId;
+    console.log(this.addbooking);
+    this.httpclient.post(url, this.addbooking)
       .subscribe(
         res=>{
             this.data = res;
             if(this.data.msg==true){
-              this.showAlert("สำเร็จ","ข้อมูลของคุณถูกแก้ไข");
-              this.navCtrl.push(StatusPage);
-              //this.navCtrl.popToRoot();
+              this.showAlert("Success","Data Edit");
+              this.navCtrl.popToRoot();
             }
         }
       ); 

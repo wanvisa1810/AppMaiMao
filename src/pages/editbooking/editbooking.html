@@ -1,0 +1,39 @@
+<!--
+  Generated template for the EditbookingPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>editbooking</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <form (ngSubmit)="editbooking()">
+        <ion-item>
+            <ion-label floating> หมายเลขโต๊ะ</ion-label>
+          </ion-item>
+      <ion-item>
+        <ion-label floating> จำนวนคน</ion-label>
+        <ion-input type="number " placehotder="จำนวนคน" [(ngModel)]="addbooking.bkPerson" name="person" requried></ion-input>
+      </ion-item>
+      <ion-item>
+            <ion-label floating>วันที่ต้องการจอง</ion-label>
+            <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="addbooking.bkDate" name="date" required=""></ion-datetime>
+      </ion-item>
+      <ion-item>
+          <ion-label floating>เวลาที่ต้องการจอง</ion-label>
+          <ion-datetime displayFormat="HH:mm" [(ngModel)]="addbooking.bkTime" name="time" required=""></ion-datetime>
+    </ion-item>
+      <ion-item>
+      <ion-label floating>ชื่อผู้จอง</ion-label>
+          <ion-input type="text"  placehotder="ชื่อผู้จอง" [(ngModel)]="addbooking.bkName" name="description" requried></ion-input>
+      </ion-item>
+  <button ion-button block>บันทึกข้อมูล</button>
+  </ion-list>
+          <button ion-button block>SAVE</button>
+      </ion-list>
+    </form>
+  </ion-content>

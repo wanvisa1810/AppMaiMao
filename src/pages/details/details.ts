@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
 import{ Http } from '@angular/http';
 import 'rxjs/add/operator/map';
-
-
 /**
- * Generated class for the StatusPage page.
+ * Generated class for the DetailsPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -14,22 +11,23 @@ import 'rxjs/add/operator/map';
 
 @IonicPage()
 @Component({
-  selector: 'page-status',
-  templateUrl: 'status.html',
+  selector: 'page-details',
+  templateUrl: 'details.html',
 })
-export class StatusPage {
-  addbooking:any=0;
+export class DetailsPage {
+  customer:any=0;
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http) {
-    //let bkId=this.navParams.get('bkId');
-    let url = "http://localhost:8080/addbooking";
+    let customerID=this.navParams.get('customerID');
+    let url = "http://localhost:8080/customer/" + customerID;
     console.log(url);
     this.http.get(url)
     .map(res=>res.json())
     .subscribe(data => {
-      this.addbooking = data;
+      this.customer = data;
     });
   }
   ionViewDidLoad() {
-    console.log('ionViewDidLoad StatusPage');
+    console.log('ionViewDidLoad DetailPage');
   }
+
 }

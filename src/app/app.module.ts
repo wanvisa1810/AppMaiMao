@@ -25,6 +25,8 @@ import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
 import { CustomerPage } from '../pages/customer/customer';
 import { EditcustomerPage } from '../pages/editcustomer/editcustomer';
+import { EditaddbookingPage } from '../pages/editaddbooking/editaddbooking';
+import { DetailsPage } from '../pages/details/details';
 
 @NgModule({
   declarations: [
@@ -41,8 +43,9 @@ import { EditcustomerPage } from '../pages/editcustomer/editcustomer';
     LoginPage,
     SignupPage,
     CustomerPage,
-    EditcustomerPage 
-    
+    EditcustomerPage,
+    EditaddbookingPage,
+    DetailsPage
   ],
   imports: [
     BrowserModule,
@@ -65,8 +68,9 @@ import { EditcustomerPage } from '../pages/editcustomer/editcustomer';
     LoginPage,
     SignupPage,
     CustomerPage,
-    EditcustomerPage 
-    
+    EditcustomerPage ,
+    EditaddbookingPage,
+    DetailsPage
   ],
   providers: [
     StatusBar,

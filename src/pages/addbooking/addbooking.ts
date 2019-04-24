@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-import { StatusPage } from '../status/status';
-
 import { HttpClient } from '@angular/common/http';
 import { AlertController } from 'ionic-angular';
+//import { DetailaddbookingPage } from '../detailaddbooking/detailaddbooking';
+import { StatusPage } from '../status/status';
 
 
 //import { HttpClient } from '@angular/common/http';
@@ -30,14 +30,13 @@ export class AddbookingPage {
     bkName:""
   }
   data:any;
-
+  
   constructor(public navCtrl: NavController, public navParams: NavParams ,private http: HttpClient, private alertCtrl:AlertController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddbookingPage');
   }
-
   addBooking(){
     let url="http://localhost:8080/addbooking";
     console.log(this.addbooking);

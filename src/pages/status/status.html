@@ -6,27 +6,18 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>สถานะการจอง</ion-title>
+    <ion-title>Status Booking</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-    <ion-card>
-        <ion-card-header>
-           <!-- จำนวนคน : 
-            <p>วันที่จอง : </p>
-            <p>เวลา :  </p>
-            <p>ชื่อผู้จอง :</p></p>-->
-            หมายเลข : {{addbooking.bkId}}
-            <p>จำนวนคน : {{addbooking.bkPerson}}</p>
-            <p>วันที่จอง :  {{addbooking.bkDate}}</p>
-            <p>เวลา :  {{addbooking.bkTime}}</p>
-            <p>ชื่อผู้จอง :  {{addbooking.bkName}}
-        </ion-card-header>
-        <ion-card-content>
-        </ion-card-content>
-      </ion-card>
-      <ion-item>
+  <ion-content padding>
+    <h5>เช็คสถานะการจอง</h5>
+    <ion-item *ngFor="let m of addbooking">
+        <p>หมายเลขโต๊ะ : {{m.bkId}}</p>
+        <p>จำนวนคน : {{m.bkPerson}}</p>
+        <p>วันที่ต้องการ : {{m.bkDate}}</p>
+        <p>เวลาที่ต้องการ : {{m.bkTime}}</p>
+        <p>ชื่อผู้จอง : {{m.bkName}}</p> 
       </ion-item>
     </ion-content>
   

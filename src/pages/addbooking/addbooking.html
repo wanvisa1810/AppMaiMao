@@ -1,42 +1,52 @@
 <ion-header>
     <ion-navbar>
-      <ion-title>ข้อมูลการจอง</ion-title>
+      <ion-title>Add Booking</ion-title>
     </ion-navbar>
   </ion-header>
   
   <ion-content padding>
-    <h2>กรุณากรอกข้อมูล</h2>
-  <form (ngSubmit)="addBooking()">
-
-      <ion-item>
-          <ion-label>โต๊ะ</ion-label>
-          <ion-select placeholder="Select One">
-            <ion-select value="m1">MaiMao 1</ion-select>
-            <ion-select value="m2">MaiMao 2</ion-select>
-          </ion-select>
+    <h5>**เพิ่มความถูกต้องกรุณากรอกหมายเลขโต๊ะ ตามหน้าเลือกโต๊ะ MaiMao 1001-1010**</h5>
+      <form (ngSubmit)="addBooking()">
+        <h4></h4>
+        <ion-list>
+            <ion-item>
+                <ion-label floating> หมายเลขโต๊ะ</ion-label>
+               <ion-input type="number " placehotder="รหัสโต๊ะ" [(ngModel)]="addbooking.bkId" name="number" requried></ion-input>
+                 <!--<ion-select [(ngModel)]="data.type" name="type" required="">
+                    <ion-option value="ion-select [(ngModel)]="data.type" name="type" required="">
+                    <ion-option value="MaiMao1001">MaiMao 1001</ion-option>
+                    <ion-option value="MaiMao1002">MaiMao 1002</ion-option>
+                </ion-select>-->
+              </ion-item>
+          <ion-item>
+            <ion-label floating> จำนวนคน</ion-label>
+            <ion-input type="number " placehotder="จำนวนคน" [(ngModel)]="addbooking.bkPerson" name="person" requried></ion-input>
+          </ion-item>
+          <ion-item>
+                <ion-label floating>วันที่ต้องการจอง</ion-label>
+                <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="addbooking.bkDate" name="date" required=""></ion-datetime>
+          </ion-item>
+          <ion-item>
+              <ion-label floating>เวลาที่ต้องการจอง</ion-label>
+              <ion-datetime displayFormat="HH:mm" [(ngModel)]="addbooking.bkTime" name="time" required=""></ion-datetime>
         </ion-item>
-
-      <ion-item>
-          <ion-label floating> Code</ion-label>
-          <ion-input type="number " placehotder="รหัสโต๊ะ" [(ngModel)]="addbooking.bkId" name="number" requried></ion-input>>
-        </ion-item>
-    <ion-item>
-      <ion-label floating> จำนวนคน</ion-label>
-      <ion-input type="number " placehotder="จำนวนคน" [(ngModel)]="addbooking.bkPerson" name="person" requried></ion-input>>
-    </ion-item>
-    <ion-item>
-          <ion-label floating>วันที่</ion-label>
-          <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="addbooking.bkDate" name="date" required=""></ion-datetime>
-    </ion-item>
-    <ion-item>
-        <ion-label floating>เวลา</ion-label>
-        <ion-datetime displayFormat="HH:mm" [(ngModel)]="addbooking.bkTime" name="time" required=""></ion-datetime>
-  </ion-item>
-    <ion-item>
-    <ion-label floating>ชื่อผู้จอง</ion-label>
-        <ion-input type="text"  placehotder="ชื่อผู้จอง" [(ngModel)]="addbooking.bkName" name="description" requried></ion-input>
-    </ion-item>
-    <button ion-button type="submit" block color="success">บันทึกข้อมูล</button>
-  </form>
-  </ion-content>
-  
+          <ion-item>
+          <ion-label floating>ชื่อผู้จอง</ion-label>
+              <ion-input type="text"  placehotder="ชื่อผู้จอง" [(ngModel)]="addbooking.bkName" name="description" requried></ion-input>
+          </ion-item>
+      <button ion-button block>บันทึกข้อมูล</button>
+      </ion-list>
+    </form>
+    
+      <!--<ion-list>
+        <p>จองโต๊ะ</p>
+        <ion-item *ngFor="let b of getAddBooking">
+        <p>{{b.bkId}}</p>
+        <p>{{b.bkPerson}}</p>
+        <p>{{b.bkDate}}</p>
+        <p>{{b.bkTime}}</p>
+        <button ion-button clear item-end (click)="deletedddbooking(b.bkId)">Delete</button>
+        <button ion-button clear item-end (click)="editdddbooking(b.bkId)">Edit</button>
+      </ion-item>
+      </ion-list>-->
+    </ion-content>
