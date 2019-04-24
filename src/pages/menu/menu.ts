@@ -33,10 +33,11 @@ export class MenuPage {
     gotoStatus(){
       this.navCtrl.push(StatusPage);
     }
-    gotoContact(){
-      this.navCtrl.push(ContactPage);
-    }
     gotoCustomer(){
       this.navCtrl.push(CustomerPage);
     }
+    gotoContact(){
+      this.navCtrl.push(ContactPage);
+    }
+    
 }

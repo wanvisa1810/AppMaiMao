@@ -49,7 +49,7 @@ export class CustomerPage {
   }
   deletecustomer(customerID){
     this.alertCtrl.create({
-      title:"ยืนยัน", subTitle:"ข้อมูลของคุณจะถูกลบ",buttons:[
+      title:"ยืนยัน", subTitle:"ยืนยันการลบของคุณ",buttons:[
         { 
           text: "Yes",
           handler:()=>{
@@ -58,7 +58,7 @@ export class CustomerPage {
               .subscribe(res=>{
                 this.data=res;
                 console.log(this.data);
-                  this.showAlert("สำเร็จ", "ข้อมูลของคุณถูกลบ");
+                  this.showAlert("เรียบร้อย", "ลบข้อมูลของคุณแล้ว");
                   this.getData();
               }); 
           }

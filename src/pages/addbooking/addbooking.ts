@@ -30,7 +30,6 @@ export class AddbookingPage {
     bkName:""
   }
   data:any;
-  
   constructor(public navCtrl: NavController, public navParams: NavParams ,private http: HttpClient, private alertCtrl:AlertController) {
   }
 
@@ -45,7 +44,7 @@ export class AddbookingPage {
         res=>{
             this.data = res;
             if(this.data.msg==true){
-              this.showAlert("Success","บันทึกการจอง");
+              this.showAlert("เรียบร้อย","เพิ่มการจองโต๊ะ");
               this.navCtrl.push(StatusPage);
           }
         }

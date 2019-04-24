@@ -16,10 +16,15 @@
       <ion-item *ngFor="let p of customer">
         <h2>{{p.customerName}}</h2>
         <p>{{p.customerMail}}</p>
-          <button ion-button clear item-end (click)="showDetails(p.customerID)">ดูข้อมูล</button>
-          <button ion-button clear item-end (click)="deletecustomer(p.customerID)">ลบ</button>
-          <button ion-button clear item-end (click)="editcustomer(p.customerID)">แก้ไข</button>
+          <button ion-button clear item-end (click)="showDetails(p.customerID)">
+              <ion-icon name="eye"></ion-icon>
+          </button>
+          <button ion-button clear item-end (click)="deletecustomer(p.customerID)">
+              <ion-icon name="trash"></ion-icon>
+          </button>
+          <button ion-button clear item-end (click)="editcustomer(p.customerID)">
+              <ion-icon name="create"></ion-icon>
+          </button>
         </ion-item>
-        <!--<ion-fab right bottom><button ion-fab mini (click)="showNewcustomer()"><ion-icon name="add"></ion-icon></button></ion-fab>
-    --></ion-list>
+       </ion-list>
     </ion-content>

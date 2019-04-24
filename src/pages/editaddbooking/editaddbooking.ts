@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http } from '@angular/http';
 import { HttpClient } from '@angular/common/http';
 import { AlertController } from 'ionic-angular';
+import { StatusPage } from '../status/status';
 /**
  * Generated class for the EditaddbookingPage page.
  *
@@ -22,11 +23,11 @@ export class EditaddbookingPage {
     bkDate:"",
     bktTime:"",
     bkName:""
-  }
-  data:any;
+  };
+  data:any=0;
   constructor(public navCtrl: NavController, public navParams: NavParams , public http: Http,
     private alertCtrl: AlertController,private httpclient: HttpClient) {
-      let bkId=this.navParams.get('bkId');
+    let bkId=this.navParams.get('bkId');
     let url = "http://localhost:8080/addbooking/" + bkId;
     console.log(url);
     this.http.get(url)
@@ -36,20 +37,19 @@ export class EditaddbookingPage {
     });
   }
   ionViewDidLoad() {
-    console.log('ionViewDidLoad EditcustomerPage');
-
+    console.log('ionViewDidLoad  EditaddbookingPage');
   }
-editcustomer(){
-  let bkId=this.navParams.get('customerID');
-  let url = "http://localhost:8080/customer/" + bkId;
+  editaddbooking(){
+  let bkId=this.navParams.get('bkId');
+  let url = "http://localhost:8080/addbooking/" + bkId;
     console.log(this.addbooking);
     this.httpclient.post(url, this.addbooking)
       .subscribe(
         res=>{
             this.data = res;
             if(this.data.msg==true){
-              this.showAlert("Success","Data Edit");
-              this.navCtrl.popToRoot();
+              this.showAlert("เรียบร้อย","แก้ไขข้อมูลการจองโต๊ะแล้ว");
+              this.navCtrl.push(StatusPage);
             }
         }
       ); 
