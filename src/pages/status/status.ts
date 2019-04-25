@@ -36,7 +36,7 @@ export class StatusPage {
 
   editaddbooking(id)
   {
-    this.navCtrl.push(EditaddbookingPage,{addbooking :id});
+    this.navCtrl.push(EditaddbookingPage,{bkId :id});
   }
   getData(){
     this.http.get('http://localhost:8080/addbooking')

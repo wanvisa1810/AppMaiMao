@@ -15,28 +15,6 @@
   <form (ngSubmit)="addCustomer()">
 <ion-list>
 
-<!--<ion-item>
-  <ion-label floating>Name : </ion-label>
-  <ion-input type="customerName"  [(ngModel)]="customer.customerName" name="customerName" requried>
-  </ion-input>
-</ion-item>
-
-<ion-item>
-  <ion-icon name=""></ion-icon>  Name : 
-</ion-item>
-
-<ion-item>
-  <ion-icon name=""></ion-icon>  NickName : 
-</ion-item>
-
-
-<ion-item>
-  <ion-icon name=""></ion-icon>  Mail : 
-</ion-item>
-
-<ion-item>
-  <ion-icon name=""></ion-icon>  Password : 
-</ion-item>-->
   <ion-item>
     <ion-label floating>รหัสลูกค้า</ion-label>
     <ion-input type="text" name="customerID" [(ngModel)]="customer.customerID"></ion-input>
@@ -59,8 +37,5 @@
     <button ion-button block>เก็บข้อมูล</button>
   </ion-list>
 </form>
-<!--<ion-item (click)="gotoMenu()">
-  <button ion-button type="submit" block>Sing up</button>
-</ion-item>-->
 </ion-content>
 

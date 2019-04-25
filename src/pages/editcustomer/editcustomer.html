@@ -12,6 +12,7 @@
 
 <ion-content padding>
   <form (ngSubmit)="editcustomer()">
+      <img src="assets/imgs/p.png">
     <ion-list>
         <ion-item>
             <ion-label floating>รหัสลูกค้า</ion-label>
@@ -19,7 +20,7 @@
           </ion-item>
 
       <ion-item>
-        <ion-label floating>ชื่อเล่น</ion-label>
+        <ion-label floating>ชื่อ</ion-label>
         <ion-input type="text" name="customerName" [(ngModel)]="customer.customerName"></ion-input>
       </ion-item>
 
